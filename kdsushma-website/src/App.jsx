@@ -25,7 +25,7 @@ const MainSite = () => (
 
 function App() {
   return (
-    <Router>
+    <Router basename="/k/kdsushma-website/">
       <div className="App">
         <Routes>
           <Route path="/" element={<MainSite />} />
