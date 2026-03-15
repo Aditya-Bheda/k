@@ -100,6 +100,7 @@ const Contact = () => {
                 placeholder="Your full name"
                 value={formData.name}
                 onChange={handleChange}
+                minLength="2"
                 required
               />
             </div>
@@ -112,18 +113,23 @@ const Contact = () => {
                 placeholder="you@example.com"
                 value={formData.email}
                 onChange={handleChange}
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                title="Please enter a valid email address"
                 required
               />
             </div>
             <div className="form-group">
-              <label htmlFor="phone">Phone Number</label>
+              <label htmlFor="phone">Phone Number (10 Digits)</label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="+91 00000 00000"
+                placeholder="10 digit mobile number"
                 value={formData.phone}
                 onChange={handleChange}
+                pattern="[0-9]{10}"
+                maxLength="10"
+                title="Please enter exactly 10 digits"
                 required
               />
             </div>
@@ -135,6 +141,7 @@ const Contact = () => {
                 placeholder="Tell us about your export-import goals..."
                 value={formData.requirement}
                 onChange={handleChange}
+                minLength="10"
                 required
               ></textarea>
             </div>

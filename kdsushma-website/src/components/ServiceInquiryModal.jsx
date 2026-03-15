@@ -68,19 +68,19 @@ const ServiceInquiryModal = ({ isOpen, onClose, serviceType, serviceTitle }) => 
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
                     <label>Full Name</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Your name" />
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} minLength="2" required placeholder="Your name" />
                   </div>
                   <div className="form-group">
                     <label>Email Address</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="you@example.com" />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Please enter a valid email address" required placeholder="you@example.com" />
                   </div>
                   <div className="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="Your contact number" />
+                    <label>Phone Number (10 Digits)</label>
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleChange} pattern="[0-9]{10}" maxLength="10" title="Please enter exactly 10 digits" required placeholder="10 digit mobile number" />
                   </div>
                   <div className="form-group">
                     <label>Your Requirement</label>
-                    <textarea name="requirement" value={formData.requirement} onChange={handleChange} required placeholder="Tell us about your needs..." />
+                    <textarea name="requirement" value={formData.requirement} onChange={handleChange} minLength="10" required placeholder="Tell us about your needs..." />
                   </div>
                   <button type="submit" className="btn-primary" disabled={status.loading} style={{ width: '100%', justifyContent: 'center' }}>
                     {status.loading ? 'Sending...' : <><FiSend /> Send Inquiry</>}

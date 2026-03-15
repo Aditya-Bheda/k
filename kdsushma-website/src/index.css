@@ -1446,6 +1446,28 @@ input, textarea {
   display: flex;
 }
 
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-success {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
 /* Book Details */
 .book-desc-text {
   font-size: 0.9rem;
