@@ -36,9 +36,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Prepare Site Directory
+        working-directory: .
         run: |
           mkdir -p _site/kdsushma-website
-          cp -r ./kdsushma-website/dist/* _site/kdsushma-website/
+          cp -a ./kdsushma-website/dist/. _site/kdsushma-website/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
