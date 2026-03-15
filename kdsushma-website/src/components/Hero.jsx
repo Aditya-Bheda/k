@@ -85,23 +85,18 @@ const Hero = () => {
 
         <motion.div
           className="hero-image"
+          initial={{ opacity: 0, scale: 0.9, x: 40 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
         >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="relative rounded-2xl overflow-hidden shadow-2xl"
-            >
-              <img 
-                src="./images/trainer.png" 
-                alt="KD Sushma - Export Import Coach" 
-                className="w-full h-auto object-cover max-h-[600px]"
-                onError={(e) => {
-                  e.target.src = 'https://via.placeholder.com/600x800?text=KD+Sushma';
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-            </motion.div>
+          <div className="hero-image-wrapper">
+            <img
+              src="./images/trainer.png"
+              alt="KDSushma - Export Import Business Coach"
+            />
+            <div className="hero-image-frame"></div>
+            <div className="hero-image-accent"></div>
+          </div>
         </motion.div>
       </div>
     </section>
