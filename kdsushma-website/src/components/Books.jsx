@@ -7,14 +7,14 @@ const books = [
   {
     title: 'Global Fortune – Export Import Guide',
     author: 'By KDSushma',
-    image: '/images/book-global-fortune.png',
+    image: import.meta.env.BASE_URL + 'images/book-global-fortune.png',
     description: 'A comprehensive guide covering everything from export documentation to international logistics. Master the complexities of global trade with practical insights.',
     price: 499
   },
   {
     title: 'Agriculture Export Guide',
     author: 'By KDSushma',
-    image: '/images/book-agriculture.png',
+    image: import.meta.env.BASE_URL + 'images/book-agriculture.png',
     description: 'Specialized guide for agricultural product exports with market insights and compliance strategies. Learn how to tap into global food markets.',
     price: 399
   },
